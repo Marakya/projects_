@@ -18,7 +18,7 @@ spec:
       - name: app
         image: <ваш логин docker hub>/<ваш репозиторий>:app
         ports:
-        - containerPort: 5000
+        - containerPort: 8000
           protocol: TCP
           name: http
         resources:
