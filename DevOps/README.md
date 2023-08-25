@@ -1,5 +1,8 @@
 # 1. Ansible playbook
 
+![Uploading image.png…]()
+
+
 Данные пользователя:
 - Username: cloudru
 - Password: cloudpass
