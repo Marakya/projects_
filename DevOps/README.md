@@ -1,7 +1,6 @@
 # 1. Ansible playbook
 
-![Uploading image.png…]()
-
+![image](https://github.com/Marakya/projects_/assets/113238801/0edb2a8f-48a7-4969-a35b-823c953527a9)
 
 Данные пользователя:
 - Username: cloudru
