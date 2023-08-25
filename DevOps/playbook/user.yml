@@ -1,1 +1,60 @@
+- name: create user cloudru
+  hosts: webservers
+  vars:
+     - passwrd: cloudpass
+  tasks:
+    - name: create user cloudru
+      user:
+        name: cloudru
+        uid: 200
+        shell: /bin/bash
+        groups: web
+        append: yes
+        generate_ssh_key: yes
+        ssh_key_file: .ssh/id_rsa
+        password: "{{ passwrd | password_hash('sha512') }}"
 
+    - name: create /etc/sudoers.d/cloudru file
+      file:
+        path: /etc/sudoers.d/cloudru
+        state: touch
+
+    - name: configure a pass-wordless authentication & execution for cloudru
+      lineinfile:
+        path: /etc/sudoers.d/cloudru
+        line: "cloudru ALL=(ALL) NOPASSWD: ALL"
+        state: present
+      
+    - name: install the SSH public key on managed host for cloudru
+      authorized_key:
+        user: cloudru
+        state: present
+        key: "{{ lookup('file', '/home/marakya/.ssh/id_rsa.pub') }}"
+
+- name: Secure SSH
+  hosts: webservers
+  become: true
+  vars:
+      sshd_config_file: /etc/ssh/sshd_config
+  tasks:
+      - name: Disable root login
+        lineinfile:
+          path: /etc/ssh/sshd_config
+          regexp: "^PermitRootLogin"
+          line: "PermitRootLogin no"
+          backup: yes
+        notify: restart sshd
+
+      - name: Enforce SSH key passphrases
+        lineinfile:
+          path: /etc/ssh/sshd_config
+          regexp: "^#PermitEmptyPasswords"
+          line: "PermitEmptyPasswords no"
+          backup: yes
+        notify: restart sshd
+
+    handlers:
+      - name: restart sshd
+        service:
+          name: sshd
+          state: restarted
