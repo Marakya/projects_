@@ -11,7 +11,7 @@
 -- ansible/user.yml
 
 ## Создадим пользователя cloudru и SSH для пользователя 
-
+```
 - name: create user cloudru
       user:
         name: cloudru
@@ -21,7 +21,7 @@
         append: yes
         generate_ssh_key: yes
         ssh_key_file: .ssh/id_rsa
-
+```
 - generate_ssh_key - эта опция используется для генерации ключа SSH для пользователя, в этом случае ключ SSH будет сгенерирован для пользователя cloudru. Этот вариант не будет перезаписывать существующий ключ SSH, если он не используется с Force=yes.
 - ssh_key_file - место, где храниться SSH
 
