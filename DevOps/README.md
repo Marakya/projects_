@@ -74,6 +74,40 @@
         ssh_key_file: .ssh/id_rsa
         password: "{{ passwrd | password_hash('sha512') }}"
 ```
+
+## Запрещает логин по ssh от пользователя root
+Для этого необходимо установить PermitRootLogin no
+```
+- name: Secure SSH
+  hosts: all
+  become: true
+  vars:
+      sshd_config_file: /etc/ssh/sshd_config
+  tasks:
+      - name: Disable root login
+        lineinfile:
+          path: /etc/ssh/sshd_config
+          regexp: "^PermitRootLogin"
+          line: "PermitRootLogin no"
+          backup: yes
+        notify: restart sshd
+
+      - name: Enforce SSH key passphrases
+        lineinfile:
+          path: /etc/ssh/sshd_config
+          regexp: "^#PermitEmptyPasswords"
+          line: "PermitEmptyPasswords no"
+          backup: yes
+        notify: restart sshd
+
+    handlers:
+      - name: restart sshd
+        service:
+          name: sshd
+          state: restarted
+  
+```
+
 Итоговый код user.yml:
 ```
 - name: create user cloudru
@@ -109,7 +143,32 @@
         state: present
         key: "{{ lookup('file', '/home/marakya/.ssh/id_rsa.pub') }}"
 
-```
+- name: Secure SSH
+  hosts: webservers
+  become: true
+  vars:
+      sshd_config_file: /etc/ssh/sshd_config
+  tasks:
+      - name: Disable root login
+        lineinfile:
+          path: /etc/ssh/sshd_config
+          regexp: "^PermitRootLogin"
+          line: "PermitRootLogin no"
+          backup: yes
+        notify: restart sshd
 
-      
-  
+      - name: Enforce SSH key passphrases
+        lineinfile:
+          path: /etc/ssh/sshd_config
+          regexp: "^#PermitEmptyPasswords"
+          line: "PermitEmptyPasswords no"
+          backup: yes
+        notify: restart sshd
+
+    handlers:
+      - name: restart sshd
+        service:
+          name: sshd
+          state: restarted
+
+```
