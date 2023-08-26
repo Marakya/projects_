@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: <ваш логин docker hub>/<ваш репозиторий>:app
+        image: marakya/my_img:app
         ports:
         - containerPort: 8000
           protocol: TCP
