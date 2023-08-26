@@ -14,5 +14,9 @@ Web-приложение
 
 ![2023-08-26 (9)](https://github.com/Marakya/projects_/assets/113238801/4509b6e3-f3ff-49e8-8ad1-9ccc3fa89a64)
 
+## Dockerfile
+![2023-08-27 (2)](https://github.com/Marakya/projects_/assets/113238801/8741c78f-1647-4226-9957-a8c61ddccbcf)
+
+
 
 
