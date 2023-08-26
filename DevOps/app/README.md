@@ -5,6 +5,7 @@
 ![image](https://github.com/Marakya/projects_/assets/113238801/eb6f6a70-21dd-443f-913f-cbbbcdea6554)
 
 
+Web-приложение
 ![2023-08-26 (3)](https://github.com/Marakya/projects_/assets/113238801/b21912ba-9ac5-4ff8-8544-06098d04260a)
 
 ![2023-08-26 (5)](https://github.com/Marakya/projects_/assets/113238801/5ad8424b-84f3-405a-8b25-10701d140799)
