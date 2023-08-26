@@ -1,8 +1,8 @@
 FROM python:3.9
 
-WORKDIR /Cloud_app
+WORKDIR /DevOps
 
-COPY . /Cloud_app
+COPY . /DevOps
 
 RUN pip3 install -r requirements.txt
 
