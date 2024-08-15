@@ -6,7 +6,9 @@ from .augment import AudioAugmentor
 @click.command()
 @click.argument('input_file', type=click.Path(exists=True))
 @click.argument('output_file', type=click.Path())
-def main(input_file, output_file):
+@click.option('--method', type=click.Choice(['audio', 'spectrogram'], case_sensitive=False), default='audio', help='Choose the augmentation method: audio or spectrogram.')
+@click.option('--effects', type=click.Choice(['FrequencyMasking', 'TimeStretching'], case_sensitive=False), default=None, help='Choose one effect to apply when using spectrogram method.')
+def main(input_file, output_file, method,effects):
     """
     CLI is an application for augmentation of audio files.
     """
@@ -26,17 +28,19 @@ def main(input_file, output_file):
     Below you can select an 'audio' or 'spectrogram' to perform the augmentation
     """
 
-    method_to_use = 'audio'  # Or 'spectrogram'
-    if method_to_use == 'audio':
-      audio, sr = augmentor.process_audio(method=method_to_use)
+    
+    if method == 'audio':
+      audio, sr = augmentor.process_audio(method=method)
       # Saving an augmented signal
       save_audio(output_file, audio, sr)
-    else: 
-      effects_spectr = ['FrequencyMasking']
-      spectr, sr = augmentor.process_audio(method=method_to_use, effects = effects_spectr)
-      # Saving an augmented signal
-      save_audio(output_file, spectr, sr)
-    
+    elif method == 'spectrogram': 
+      if effects:
+            spectr, sr = augmentor.process_audio(method=method, effects=[effects])
+            # Saving an augmented signal
+            save_audio(output_file, spectr, sr)
+      else:
+            click.echo("No effect provided for spectrogram method. Please specify an effect.")
+
     click.echo(f"The audio has been successfully saved in: {output_file}!")
     
 
