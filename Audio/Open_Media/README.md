@@ -60,14 +60,14 @@ Replace *path/to/input/file* with the path to your input audio file, *path/to/ou
 
 
 2. **Command Options:**
-
-**--input or -i:** Path to the input audio file.
-
-**--output or -o:** Path to save the processed audio file or output image.
-
-**--method or -m:** Method to use for processing. Options: audio, spectrogram.
-
-**--effects or -e:** Effects to apply when using the spectrogram method. Options: TimeMasking, FrequencyMasking.
+   
+   **--input or -i:** Path to the input audio file.
+   
+   **--output or -o:** Path to save the processed audio file or output image.
+   
+   **--method or -m:** Method to use for processing. Options: audio, spectrogram.
+   
+   **--effects or -e:** Effects to apply when using the spectrogram method. Options: TimeMasking, FrequencyMasking.
 
 
 3. **Examples:**
