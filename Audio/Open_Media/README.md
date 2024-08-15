@@ -14,7 +14,7 @@ Follow these steps to install and set up the CLI tool:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/Marakya/projects_/tree/main/Audio/Open_Media
+   git clone https://github.com/Marakya/projects_/tree/main/Audio/Open_Media 
    ```
 
 2. **Navigate to the project directory:**
