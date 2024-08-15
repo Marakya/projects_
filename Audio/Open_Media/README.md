@@ -50,7 +50,7 @@ To use the CLI tool, follow these steps:
 
 1. **Run the CLI tool:**
    ```
-   python -m audio_augmenter.cli --input path/to/input/file --output path/to/output/file --method audio
+   python -m audio_augmenter.cli path/to/input/file path/to/output/file --method audio
    ```
    
 In this work, two types of augmentation are considered: raw audio augmentation and audio signal spectrogram augmentation. Audio spectrogram augmentation is widely used in speech recognition tasks.
@@ -60,11 +60,7 @@ Replace *path/to/input/file* with the path to your input audio file, *path/to/ou
 
 
 2. **Command Options:**
-   
-   **--input or -i:** Path to the input audio file.
-   
-   **--output or -o:** Path to save the processed audio file or output image.
-   
+     
    **--method or -m:** Method to use for processing. Options: audio, spectrogram.
    
    **--effects or -e:** Effects to apply when using the spectrogram method. Options: TimeMasking, FrequencyMasking.
@@ -74,12 +70,12 @@ Replace *path/to/input/file* with the path to your input audio file, *path/to/ou
 
 - Process an audio file with default settings:
   ```
-  python -m audio_augmenter.cli --input audio.wav --output augmented_audio.wav
+  python -m audio_augmenter.cli audio.wav augmented_audio.wav --method audio
   ```
 
 - Apply a spectrogram augmentation with time masking:
   ```
-  python -m audio_augmenter.cli --input audio.wav --output augmented_spectrogram.wav --method spectrogram --effects TimeMasking
+  python -m audio_augmenter.cli audio.wav augmented_spectrogram.wav --method spectrogram --effects TimeMasking
   ```
   
 ## Running Tests
