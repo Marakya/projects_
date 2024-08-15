@@ -4,18 +4,7 @@ A command-line interface tool for augmenting audio signals with various effects.
 
 ## Project Structure
 
-├── audio_augmenter/
-│   ├── __init__.py
-│   ├── cli.py
-│   ├── augment.py
-│   └── utils.py
-│
-├── tests/
-│   ├── __init__.py
-│   └── test_augment.py
-│
-├── setup.py
-└── requirements.txt
+![image](https://github.com/user-attachments/assets/32ce48f9-0bc0-4b74-8581-907eb92c72ce)
 
 
 ## Installation
@@ -29,14 +18,14 @@ Follow these steps to install and set up the CLI tool:
    ```
 
 2. **Navigate to the project directory:**
-  ```
-  cd yourproject
-  ```
+     ```
+     cd yourproject
+     ```
 
 3. **Create a virtual environment:**
-   ```
-   python -m venv venv
-   ```
+      ```
+      python -m venv venv
+      ```
 4. **Activate the virtual environment:**
    - On Windows:
      ```
@@ -47,13 +36,13 @@ Follow these steps to install and set up the CLI tool:
      source venv/bin/activate
      ```
 5. **Install the dependencies:**
-   ```
-   pip install -r requirements.txt
-   ```
+      ```
+      pip install -r requirements.txt
+      ```
 6. **Install the package:**
-   ```
-   pip install .
-   ```
+      ```
+      pip install .
+      ```
 
 ## Usage 
 
@@ -66,14 +55,20 @@ To use the CLI tool, follow these steps:
    
 In this work, two types of augmentation are considered: raw audio augmentation and audio signal spectrogram augmentation. Audio spectrogram augmentation is widely used in speech recognition tasks.
 
+
 Replace *path/to/input/file* with the path to your input audio file, *path/to/output/file* with the desired output path, and choose a processing method ('audio' or 'spectrogram').
+
 
 2. **Command Options:**
 
---input or -i: Path to the input audio file.
---output or -o: Path to save the processed audio file or output image.
---method or -m: Method to use for processing. Options: audio, spectrogram.
---effects or -e: Effects to apply when using the spectrogram method. Options: TimeMasking, FrequencyMasking.
+**--input or -i:** Path to the input audio file.
+
+**--output or -o:** Path to save the processed audio file or output image.
+
+**--method or -m:** Method to use for processing. Options: audio, spectrogram.
+
+**--effects or -e:** Effects to apply when using the spectrogram method. Options: TimeMasking, FrequencyMasking.
+
 
 3. **Examples:**
 
@@ -89,11 +84,14 @@ Replace *path/to/input/file* with the path to your input audio file, *path/to/ou
   
 ## Running Tests
 
+
 To ensure that everything is working correctly, you can run the tests with the following command:
+
 - If you want to run tests from a specific file, you can specify the file directly:
   ```
   python -m unittest tests.test_augment
   ```
+  
 - You can run unittest directly from the command line. To discover and run tests, use:
   ```
   python -m unittest discover -s tests
