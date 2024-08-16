@@ -19,7 +19,6 @@ def main(input_file, output_file, method,effects):
     
     click.echo("Audio augmentation...")
     augmentor = AudioAugmentor(audio, sr)
-
     """
     The choice of the augmentation method. 
     In this work, two types of augmentation are considered: 
