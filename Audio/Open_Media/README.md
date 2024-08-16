@@ -37,7 +37,7 @@ Follow these steps to install and set up the CLI tool:
      ```
 5. **Install the packages:**
       ```
-      pip install .
+      pip install -e .
       ```
 
 
