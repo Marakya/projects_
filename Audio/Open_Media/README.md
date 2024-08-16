@@ -93,7 +93,16 @@ To ensure that everything is working correctly, you can run the tests with the f
   python -m unittest discover -s tests
   ```
   
+## Creating Distributions:
 
+You can use *setup.py* to create source distributions (.tar.gz files) or built distributions (.whl files). These can then be uploaded to PyPI for others to install via pip.
+
+To create these distributions, you would run:
+   ```
+   python setup.py sdist bdist_wheel
+   ```
+
+This command packages your code and generates distribution archives in a dist/ directory.
 
    
 
