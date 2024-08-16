@@ -35,14 +35,11 @@ Follow these steps to install and set up the CLI tool:
      ```
      source venv/bin/activate
      ```
-5. **Install the dependencies:**
-      ```
-      pip install -r requirements.txt
-      ```
-6. **Install the package:**
+5. **Install the package:**
       ```
       pip install .
       ```
+
 
 ## Usage 
 
