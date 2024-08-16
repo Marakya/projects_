@@ -35,7 +35,7 @@ Follow these steps to install and set up the CLI tool:
      ```
      source venv/bin/activate
      ```
-5. **Install the package:**
+5. **Install the packages:**
       ```
       pip install .
       ```
