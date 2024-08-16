@@ -1,4 +1,11 @@
 from setuptools import setup, find_packages
+
+# Fallback for README.md
+long_description = ""
+if os.path.exists("README.md"):
+    with open("README.md", "r", encoding="utf-8") as fh:
+        long_description = fh.read()
+
 setup(
     name='audio_augmenter',
     version='0.1.0',
@@ -11,7 +18,6 @@ setup(
         'matplotlib',
         'IPython',
         'click',
-        'unittest',
 
     ],
     entry_points={
@@ -23,9 +29,9 @@ setup(
     author="Ekaterina Maiatskaia",
     author_email="mayatskaya.katya@mail.ru",
     description="CLI tool for audio augmentation",
-    long_description=open("README.md").read(),
-    long_description_content_type="",
-    url="",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/Marakya/projects_/tree/main/Audio/Open_Media",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
