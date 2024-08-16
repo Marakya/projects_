@@ -27,7 +27,6 @@ def main(input_file, output_file, method,effects):
     Audio spectrogram augmentation is widely used in speech recognition tasks.
     Below you can select an 'audio' or 'spectrogram' to perform the augmentation
     """
-
     
     if method == 'audio':
       audio, sr = augmentor.process_audio(method=method)
