@@ -12,7 +12,7 @@ Github - https://github.com/Marakya/thesis
 **Approach to Evaluating AI-Generated Educational Content: A Case Study on AI-Generated Tests**
 
 Github - [https://github.com/Marakya/thesis](https://github.com/Marakya/graph_eval)
-
+----------------------------------------------------------------------------
 
 **AI-assistant**
 
